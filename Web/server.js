@@ -9,6 +9,8 @@ app.get('/', (req,res) => {
 
 });
 
+const cepRegex = /^[0-9]{5}-?[09]{3}$/;
+
 app.get('/consulta-cep/:cep',async(req, res) => {
     const cep = req.params.cep;
 
