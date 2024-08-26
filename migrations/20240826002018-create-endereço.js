@@ -5,7 +5,7 @@ const { Sequelize } = require("sequelize");
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('enderecos', {
-      Id: {
+      id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,

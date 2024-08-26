@@ -1,52 +1,52 @@
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
-class Endereco extends Model{}
+class Endereco extends Model {}
 
-        Endereco.init({
-        id:{
+module.exports = (sequelize) => {
+    Endereco.init({
+        Id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
-            allowNull: false,
+            autoIncrement: true
         },
-        Cep:{
-            type:DataTypes.STRING,
-            allownull: false,
+        Cep: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
-        Logradouro:{
-            type:DataTypes.STRING,
-            allownull: false,
+        Logradouro: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
-        Numero:{
-            type:DataTypes.INTEGER,
-            allownull: false,
+        Numero: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
-        Complemento:{
-            type:DataTypes.STRING,
+        Complemento: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        Bairro: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        Cidade: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        Estado: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        MunicipioIBGE: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+    }, {
+        sequelize,
+        modelName: 'Endereco',
+        tableName: 'enderecos',
+        timestamps: false,
+    });
 
-        },
-        Bairo:{
-            type:DataTypes.STRING,
-            allownull: false,
-        },
-        Cidade:{
-            type:DataTypes.STRING,
-            allownull: false,
-        },
-        Estado:{
-            type:DataTypes.STRING,
-            allownull: false,
-        },
-        MunicipioIBGE:{
-            type:DataTypes.STRING,
-            allownull: false,
-        }, 
-        },{
-            sequelize,
-            modelName: 'Endereco',
-            tableName: 'enderecos',
-            timestamps: true,
-        });   
-       
-        module.exports - Endereco;
-
+    return Endereco;
+};

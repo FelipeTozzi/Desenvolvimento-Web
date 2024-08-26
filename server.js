@@ -34,7 +34,3 @@ app.get('/rota', (req,res) => {
 
 });
 
-app.listen(port , () => {
-    console.log(`Servidor roda no http://localhost:${port}`);
-});
-
