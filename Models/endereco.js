@@ -2,53 +2,51 @@ const {Model, DataTypes} = require('sequelize');
 
 class Endereco extends Model{}
 
-Endereco.init(
-    
-    {
+        Endereco.init({
         id:{
             type: DataTypes.INTEGER,
-            
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false,
         },
-        cep:{
+        Cep:{
             type:DataTypes.STRING,
-
+            allownull: false,
         },
-        logradouro:{
+        Logradouro:{
             type:DataTypes.STRING,
-
+            allownull: false,
         },
-        numero:{
+        Numero:{
             type:DataTypes.INTEGER,
-
+            allownull: false,
         },
-        complemento:{
-            type:DataTypes.STRING,
-            allownull: true,
-
-        },
-        bairo:{
+        Complemento:{
             type:DataTypes.STRING,
 
         },
-        cidade:{
+        Bairo:{
             type:DataTypes.STRING,
-
+            allownull: false,
         },
-        estado:{
+        Cidade:{
             type:DataTypes.STRING,
-
+            allownull: false,
         },
-        IBGE:{
+        Estado:{
             type:DataTypes.STRING,
-
+            allownull: false,
         },
-    },    
-        {
-            // Other model options go here
-            sequelize, // We need to pass the connection instance
-            modelName: 'User', // We need to choose the model name
-          },
-        );
-        
-        // the defined model is the class itself
-        console.log(User === sequelize.models.User); // true
+        MunicipioIBGE:{
+            type:DataTypes.STRING,
+            allownull: false,
+        }, 
+        },{
+            sequelize,
+            modelName: 'Endereco',
+            tableName: 'enderecos',
+            timestamps: true,
+        });   
+       
+        module.exports - Endereco;
+
